@@ -18,7 +18,7 @@
         <div data-role="page" id="home" data-theme="a">
             <div data-role="header" data-position="fixed" data-theme="a">
                 <img border="0" src="img/Logo.png" alt="" class="logo"/>
-                <h1>To-Do List</h1>
+                <h1>Teams To-Do List</h1>
             </div>
             <div data-role="content" data-theme="a">
                 <a href="#addItem">
@@ -26,8 +26,7 @@
                 </a><br />
                 <div id="divBrowse" class="divSection">
                     <div id="divBrowseHeader" class="divHeader">Browse To-Do's By</div>
-                    <br />
-                        <ul data-role="listview" data-filter="true" data-inset="true">
+                        <ul data-role="listview" data-inset="true">
                             <li><a href="404.html"><span class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;&nbsp;&nbsp;&nbsp;</span> Name</a></li>
                             <li><a href="404.html"><span class="ui-icon ui-icon-back ui-icon-shadow">&nbsp;&nbsp;&nbsp;&nbsp;</span> Creator</a></li>
                             <li><a href="404.html"><span class="ui-icon ui-icon-forward ui-icon-shadow">&nbsp;&nbsp;&nbsp;&nbsp;</span> Assigned To</a></li>
@@ -41,8 +40,8 @@
                     <ul>
                         <li><a href="#home" data-icon="home">Home</a></li>
                         <li><a href="#items" data-icon="star">To-Do's</a></li>
-                        <li><a href="#addItem" data-icon="add">Add</a></li>
-                        <li><a href="#about" data-icon="info">About</a></li>
+                        <li><a href="#members" data-icon="add">Members</a></li>
+                        <li><a href="#settings" data-icon="info">Settings</a></li>
                     </ul>
                 </div>
             </div>
@@ -107,6 +106,7 @@
                         </select>
                     </div>
                     <div data-role="fieldcontain">
+                        <input type="hidden" id="key" />
                         <input type="submit" value="Add To-Do" data-theme="b" />
                         <br />
                         <input type="reset" value="Reset" data-theme="a" />
@@ -119,8 +119,8 @@
                     <ul>
                         <li><a href="#home" data-icon="home">Home</a></li>
                         <li><a href="#items" data-icon="star">To-Do's</a></li>
-                        <li><a href="#addItem" data-icon="add">Add</a></li>
-                        <li><a href="#about" data-icon="info">About</a></li>
+                        <li><a href="#members" data-icon="add">Members</a></li>
+                        <li><a href="#settings" data-icon="info">Settings</a></li>
                     </ul>
                 </div>
             </div>
@@ -143,9 +143,9 @@
                 <div data-role="navbar">
                 <ul>
                     <li><a href="#home" data-icon="home">Home</a></li>
-                    <li><a href="#items" data-icon="star">To-Do's</a></li>
-                    <li><a href="#addItem" data-icon="add">Add</a></li>
-                    <li><a href="#about" data-icon="info">About</a></li>
+                        <li><a href="#items" data-icon="star">To-Do's</a></li>
+                        <li><a href="#members" data-icon="add">Members</a></li>
+                        <li><a href="#settings" data-icon="info">Settings</a></li>
                 </ul>
                     </div>
             </div>
@@ -156,12 +156,8 @@
                 <h1>Items</h1>
             </div>
             <div data-role="content">
-                <ul data-role="listview" data-filter="true">
-                    <li><a href="#item1">Meet with Andy re: Data Project <p>Due 2/18/2013</p></a></li>
-                    <li><a href="#item2">Update Events Spreadsheet <p>Due 2/19/2013</p></a></li>
-                    <li><a href="#item3">Hold Lunch Meeting <p>Due 2/21/2013</p></a></li>
-                    <li><a href="#item4">Prepare Table Top Signage <p>Due 2/22/2013</p></a></li>
-                    <li><a href="#item5">Order Food from Crisper's <p>Due 2/23/2013</p></a></li>
+                <ul data-role="listview" data-inset="true" data-filter="true">
+                    
                 </ul>
             </div>
             <div data-role="footer" data-position="fixed">
@@ -169,143 +165,27 @@
                     <ul>
                         <li><a href="#home" data-icon="home">Home</a></li>
                         <li><a href="#items" data-icon="star">To-Do's</a></li>
-                        <li><a href="#addItem" data-icon="add">Add</a></li>
-                        <li><a href="#about" data-icon="info">About</a></li>
+                        <li><a href="#members" data-icon="add">Members</a></li>
+                        <li><a href="#settings" data-icon="info">Settings</a></li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div data-role="page" id="item1" data-add-back-btn="true" data-theme="a">
+        <div data-role="page" id="members" data-theme="a">
             <div data-role="header" data-position="fixed">
-                <h1>Meet with Andy re: Data Project</h1>
+                <img border="0" src="img/Logo.png" alt="" class="logo"/>
+                <h1>Items</h1>
             </div>
             <div data-role="content">
-                <ul data-role="listview">
-                    <li>First Name: Garrett</li>
-                    <li>Last Name: Moore</li>
-                    <li>To-Do Name: Meet with Andy re: Data Project</li>
-                    <li>Due Date: 2/18/2013</li>
-                    <li>Assigned to: James Makowski</li>
-                    <li>Priority: 27</li>
-                    <li>Send Email to Task Receiver: Yes</li>
-                    <li><p>Talk to Andy about incorporating ethnicity information into data tracking projects.</p></li>
-                </ul>
+                Placeholder for Members
             </div>
             <div data-role="footer" data-position="fixed">
                 <div data-role="navbar">
                     <ul>
                         <li><a href="#home" data-icon="home">Home</a></li>
                         <li><a href="#items" data-icon="star">To-Do's</a></li>
-                        <li><a href="#addItem" data-icon="add">Add</a></li>
-                        <li><a href="#about" data-icon="info">About</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div data-role="page" id="item2" data-add-back-btn="true" data-theme="a">
-            <div data-role="header" data-position="fixed">
-                <h1>Update Events Spreadsheet</h1>
-            </div>
-            <div data-role="content">
-                <ul data-role="listview">
-                    <li>First Name: Garrett</li>
-                    <li>Last Name: Moore</li>
-                    <li>To-Do Name: Update Events Spreadsheet</li>
-                    <li>Due Date: 2/19/2013</li>
-                    <li>Assigned to: Sarah Slegona</li>
-                    <li>Priority: 2</li>
-                    <li>Send Email to Task Receiver: Yes</li>
-                    <li><p>Update spreadsheet with newly-generated events.</p></li>
-                </ul>
-            </div>
-            <div data-role="footer" data-position="fixed">
-                <div data-role="navbar">
-                    <ul>
-                        <li><a href="#home" data-icon="home">Home</a></li>
-                        <li><a href="#items" data-icon="star">To-Do's</a></li>
-                        <li><a href="#addItem" data-icon="add">Add</a></li>
-                        <li><a href="#about" data-icon="info">About</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div data-role="page" id="item3" data-add-back-btn="true" data-theme="a">
-            <div data-role="header" data-position="fixed">
-                <h1>Hold Lunch Meeting</h1>
-            </div>
-            <div data-role="content">
-                <ul data-role="listview">
-                    <li>First Name: Garrett</li>
-                    <li>Last Name: Moore</li>
-                    <li>To-Do Name: Hold Lunch Meeting</li>
-                    <li>Due Date: 2/21/2013</li>
-                    <li>Assigned to: Sarah Slegona</li>
-                    <li>Priority: 99</li>
-                    <li>Send Email to Task Receiver: Yes</li>
-                    <li><p>Hold Lunch Meeting with Security, IMT, Runners, I&D, etc.</p></li>
-                </ul>
-            </div>
-            <div data-role="footer" data-position="fixed">
-                <div data-role="navbar">
-                    <ul>
-                        <li><a href="#home" data-icon="home">Home</a></li>
-                        <li><a href="#items" data-icon="star">To-Do's</a></li>
-                        <li><a href="#addItem" data-icon="add">Add</a></li>
-                        <li><a href="#about" data-icon="info">About</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div data-role="page" id="item4" data-add-back-btn="true" data-theme="a">
-            <div data-role="header" data-position="fixed">
-                <h1>Prepare Table Top Signage</h1>
-            </div>
-            <div data-role="content">
-                <ul data-role="listview">
-                    <li>First Name: Garrett</li>
-                    <li>Last Name: Moore</li>
-                    <li>To-Do Name: Prepare Table Top Signage</li>
-                    <li>Due Date: 2/22/2013</li>
-                    <li>Assigned to: Sarah Slegona</li>
-                    <li>Priority: 88</li>
-                    <li>Send Email to Task Receiver: Yes</li>
-                    <li><p>Verify that all signs were returned and print/prepare new ones as needed.</p></li>
-                </ul>
-            </div>
-            <div data-role="footer" data-position="fixed">
-                <div data-role="navbar">
-                    <ul>
-                        <li><a href="#home" data-icon="home">Home</a></li>
-                        <li><a href="#items" data-icon="star">To-Do's</a></li>
-                        <li><a href="#addItem" data-icon="add">Add</a></li>
-                        <li><a href="#about" data-icon="info">About</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div data-role="page" id="item5" data-add-back-btn="true" data-theme="a">
-            <div data-role="header" data-position="fixed">
-                <h1>Order Food from Crisper's</h1>
-            </div>
-            <div data-role="content">
-                <ul data-role="listview">
-                    <li>First Name: Garrett</li>
-                    <li>Last Name: Moore</li>
-                    <li>To-Do Name: Order Food from Crisper's</li>
-                    <li>Due Date: 2/23/2013</li>
-                    <li>Assigned to: Sarah Slegona</li>
-                    <li>Priority: 57</li>
-                    <li>Send Email to Task Receiver: Yes</li>
-                    <li><p>7 Sandwich platters minimum, assorted varieties. Make sure one is vegetarian.</p></li>
-                </ul>
-            </div>
-            <div data-role="footer" data-position="fixed">
-                <div data-role="navbar">
-                    <ul>
-                        <li><a href="#home" data-icon="home">Home</a></li>
-                        <li><a href="#items" data-icon="star">To-Do's</a></li>
-                        <li><a href="#addItem" data-icon="add">Add</a></li>
-                        <li><a href="#about" data-icon="info">About</a></li>
+                        <li><a href="#members" data-icon="add">Members</a></li>
+                        <li><a href="#settings" data-icon="info">Settings</a></li>
                     </ul>
                 </div>
             </div>
@@ -313,6 +193,7 @@
         <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
         <script src="js/libs/jquery.validate.min.js" type="text/javascript"></script>
+        <script src="js/json.js" type="text/javascript"></script>
         <script src="js/main.js" type="text/javascript"></script>
     </body>
 </html>

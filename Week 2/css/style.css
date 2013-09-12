@@ -107,10 +107,10 @@ input {
     color: #666666;
     font-size: 30px;
     font-family: Arial;
-    padding-top: 3px;
+    /*padding-top: 3px;
     padding-right: 5px;
     padding-bottom: 2px;
-    padding-left: 5px;
+    padding-left: 5px;*/
     border-bottom: 1px solid #C5C5C5;
 }
 

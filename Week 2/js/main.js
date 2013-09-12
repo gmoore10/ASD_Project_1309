@@ -1,35 +1,111 @@
-$('#home').on('pageinit', function(){
+$('#home').on('pageinit', function () {
 	//code needed for home page goes here
-});	
-		
-$('#addItem').on('pageinit', function(){
+});
 
-		var myForm = $('#addToDoForm');
-		    myForm.validate({
-			invalidHandler: function(form, validator) {
-			},
-			submitHandler: function() {
-		var data = myForm.serializeArray();
-			storeData(data);
+$('#items').on('pageinit', function () {
+
+    function autoPopulateData() {
+        //Populate to-do records from JSON file it localStorage is empty.
+        for (var n in json) {
+            var id = Math.floor(Math.random() * 100000001);
+            localStorage.setItem(id, JSON.stringify(json[n]));
+        }
+    }
+
+    function getToDos() {
+        if (localStorage.length === 0) {
+            autoPopulateData();
+        }
+    }
+
+    getToDos();
+
+    //$("div#items").find("div[data-role='content']").append('<ul id="ulItems" data-role="listview" data-inset="true" data-filter="true"></ul>');
+    
+    for (var i = 0, j = localStorage.length; i < j; i++) {
+
+        var key = localStorage.key(i);
+        var value = localStorage.getItem(key);
+        var todo = JSON.parse(value);
+
+        var divItems = $("div#items div[data-role='content'] ul");
+
+        divItems.append('<li>' +
+            '<a href="#addItem" toDoID="' + key + '">' + todo.toDoName[1] +
+            '<br />Due: ' + todo.dtDue[1] + '</p>' + '' +
+            '</li>');
+
+        divItems.listview('refresh')
+
+    }
+
+    $("a[todoid][href='#addItem']").on("click", function (event) {
+        var toDoId = $(event.target).attr("todoid");
+        editToDo(toDoId);
+    });
+});
+
+$('#members').on('pageinit', function () {
+
+});
+		
+$('#addItem').on('pageinit', function () {
+
+    var toDoAssignees = $.ajax({
+        type: "GET",
+        url: "/js/teamMembers.xml",
+        dataType: "xml",
+        success: function (xml) {
+        }
+    });
+
+	var myForm = $('#addToDoForm');
+		myForm.validate({
+		    invalidHandler: function(form, validator) {
+		},
+		submitHandler: function() {
+		    var data = myForm.serializeArray();
+		    var key = $("#key").val();
+		    storeData(data, key);
 		}
-	});
+});
 	
-	//any other code needed for addItem page goes here
+    //any other code needed for addItem page goes here
 	
 });
 
 //The functions below can go inside or outside the pageinit function for the page in which it is needed.
 
-var autofillData = function (){
-	 
+editToDo = function (key) {
+    //Change to the #addItem page
+    $.mobile.changePage($('#addItem'));
+
+    //get the toDo from the passed key
+    var todo = localStorage.getItem(key);
+    var todoItem = JSON.parse(todo);
+
+    //Populate the form with the retrieved values
+    $("#txtFirstName").val(todoItem.firstName[1]);
+    $("#txtLastName").val(todoItem.lastName[1]);
+    $("#txtToDoName").val(todoItem.toDoName[1]);
+    $("#txtDueDate").val(todoItem.dtDue[1]);
+    $("#ddlAssignedTo").val(todoItem.assignedTo[1]);
+    $("#ddlAssignedTo").selectmenu('refresh');
+    $("#rngPriority").val(todoItem.priority[1]);
+    $("#sldEmailTaskReceiver").val(todoItem.sendEmail[1]);
+    $("#txtContent").val(todoItem.content[1]);
+
+    //Pass Key to hidden input
+    $("#key").val(key);
+
+    var link = $("#addItem input[type='submit']");
+
+    //Edit the submit button's value to say "Edit" instead of "Add"
+    $("#addItem input[type='submit']").attr("value", "Edit To-Do");
+    link.button('refresh');
 };
 
-var getData = function(){
-
-};
-
-var storeData = function (data) {
-    var key;
+var storeData = function (data, key) {
     if (!key) {
         var id = Math.floor(Math.random() * 100000001);
     } else {
