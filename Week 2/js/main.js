@@ -1,26 +1,30 @@
+//ASD 1307
+//Author: Garrett Moore
+//Refactored from VFW
+
+//var toDoLibrary = {
+
 $('#home').on('pageinit', function () {
-	//code needed for home page goes here
+
+    //Load XML data for Drop Down List in form.
+    var toDoAssignees = $.ajax({
+        type: "GET",
+        url: "js/teamMembers.xml",
+        dataType: "xml",
+        success: function (data, status) {
+            $(data).find('teamMember').each(function () {
+                var $teamMember = $(this);
+                var name = $teamMember.find('name').text();
+                $("#ddlAssignedTo").append('<option value="' + name + '">' + name + '</option>');
+            });
+            $("#ddlAssignedTo").selectmenu('refresh');
+        }
+    });
 });
 
 $('#items').on('pageinit', function () {
 
-    function autoPopulateData() {
-        //Populate to-do records from JSON file it localStorage is empty.
-        for (var n in json) {
-            var id = Math.floor(Math.random() * 100000001);
-            localStorage.setItem(id, JSON.stringify(json[n]));
-        }
-    }
-
-    function getToDos() {
-        if (localStorage.length === 0) {
-            autoPopulateData();
-        }
-    }
-
     getToDos();
-
-    //$("div#items").find("div[data-role='content']").append('<ul id="ulItems" data-role="listview" data-inset="true" data-filter="true"></ul>');
     
     for (var i = 0, j = localStorage.length; i < j; i++) {
 
@@ -31,7 +35,7 @@ $('#items').on('pageinit', function () {
         var divItems = $("div#items div[data-role='content'] ul");
 
         divItems.append('<li>' +
-            '<a href="#addItem" toDoID="' + key + '">' + todo.toDoName[1] +
+            '<a href="#addItem" data-key="' + key + '">' + todo.toDoName[1] +
             '<br />Due: ' + todo.dtDue[1] + '</p>' + '' +
             '</li>');
 
@@ -39,8 +43,8 @@ $('#items').on('pageinit', function () {
 
     }
 
-    $("a[todoid][href='#addItem']").on("click", function (event) {
-        var toDoId = $(event.target).attr("todoid");
+    $("a[data-key][href='#addItem']").on("click", function (event) {
+        var toDoId = $(event.target).data('key'); 
         editToDo(toDoId);
     });
 });
@@ -50,14 +54,7 @@ $('#members').on('pageinit', function () {
 });
 		
 $('#addItem').on('pageinit', function () {
-
-    var toDoAssignees = $.ajax({
-        type: "GET",
-        url: "/js/teamMembers.xml",
-        dataType: "xml",
-        success: function (xml) {
-        }
-    });
+    var toDoAssigneeList = {};
 
 	var myForm = $('#addToDoForm');
 		myForm.validate({
@@ -143,3 +140,16 @@ var clearLocal = function(){
 };
 
 
+function autoPopulateData() {
+    //Populate to-do records from JSON file it localStorage is empty.
+    for (var n in json) {
+        var id = Math.floor(Math.random() * 100000001);
+        localStorage.setItem(id, JSON.stringify(json[n]));
+    }
+}
+
+function getToDos() {
+    if (localStorage.length === 0) {
+        autoPopulateData();
+    }
+}
