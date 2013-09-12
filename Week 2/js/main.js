@@ -4,10 +4,12 @@
 
 //var toDoLibrary = {
 
+var toDoAssignees = {};
+
 $('#home').on('pageinit', function () {
 
     //Load XML data for Drop Down List in form.
-    var toDoAssignees = $.ajax({
+    toDoAssignees = $.ajax({
         type: "GET",
         url: "js/teamMembers.xml",
         dataType: "xml",
@@ -17,7 +19,7 @@ $('#home').on('pageinit', function () {
                 var name = $teamMember.find('name').text();
                 $("#ddlAssignedTo").append('<option value="' + name + '">' + name + '</option>');
             });
-            $("#ddlAssignedTo").selectmenu('refresh');
+            //$("#ddlAssignedTo").selectmenu('refresh');
         }
     });
 });
@@ -35,8 +37,8 @@ $('#items').on('pageinit', function () {
         var divItems = $("div#items div[data-role='content'] ul");
 
         divItems.append('<li>' +
-            '<a href="#addItem" data-key="' + key + '">' + todo.toDoName[1] +
-            '<br />Due: ' + todo.dtDue[1] + '</p>' + '' +
+            '<a href="#addItem" data-key="' + key + '">' + todo.toDoName +
+            '<br />Due: ' + todo.dtDue + '</p>' + '' +
             '</li>');
 
         divItems.listview('refresh')
@@ -51,10 +53,27 @@ $('#items').on('pageinit', function () {
 
 $('#members').on('pageinit', function () {
 
+    var divMembers = $("div#members div[data-role='content'] ul");
+
+    var toDoTeamMembers = $.ajax({
+        type: "GET",
+        url: "js/teamMembers.xml",
+        dataType: "xml",
+        success: function (data, status) {
+            $(data).find('teamMember').each(function () {
+                var $teamMember = $(this);
+                var name = $teamMember.find('name').text();
+                divMembers.append('<li>' + name + '</li>');
+            });
+            divMembers.listview('refresh')
+        }
+    });
 });
 		
 $('#addItem').on('pageinit', function () {
     var toDoAssigneeList = {};
+
+    $("#ddlAssignedTo").selectmenu('refresh');
 
 	var myForm = $('#addToDoForm');
 		myForm.validate({
@@ -82,15 +101,15 @@ editToDo = function (key) {
     var todoItem = JSON.parse(todo);
 
     //Populate the form with the retrieved values
-    $("#txtFirstName").val(todoItem.firstName[1]);
-    $("#txtLastName").val(todoItem.lastName[1]);
-    $("#txtToDoName").val(todoItem.toDoName[1]);
-    $("#txtDueDate").val(todoItem.dtDue[1]);
-    $("#ddlAssignedTo").val(todoItem.assignedTo[1]);
+    $("#txtFirstName").val(todoItem.firstName);
+    $("#txtLastName").val(todoItem.lastName);
+    $("#txtToDoName").val(todoItem.toDoName);
+    $("#txtDueDate").val(todoItem.dtDue);
+    $("#ddlAssignedTo").val(todoItem.assignedTo);
     $("#ddlAssignedTo").selectmenu('refresh');
-    $("#rngPriority").val(todoItem.priority[1]);
-    $("#sldEmailTaskReceiver").val(todoItem.sendEmail[1]);
-    $("#txtContent").val(todoItem.content[1]);
+    $("#rngPriority").val(todoItem.priority);
+    $("#sldEmailTaskReceiver").val(todoItem.sendEmail);
+    $("#txtContent").val(todoItem.content);
 
     //Pass Key to hidden input
     $("#key").val(key);
