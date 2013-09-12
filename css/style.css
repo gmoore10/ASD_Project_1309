@@ -1,0 +1,144 @@
+﻿body {
+     	
+    background-color: #cccccc;
+    color: #666666;
+    background-repeat: no-repeat;
+}
+
+.logo {
+    float:left;
+    display:inline;
+    position: absolute;
+    top: 5px; 
+    left: 5px;
+}
+
+label.error {
+    display: block;
+    margin: 10px 0px;
+    color: red;
+}
+
+h1 {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 20pt;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: underline;
+    font-family: Arial, sans-serif;
+}
+
+#chkEmailAssignee {
+    width: 20px !important;
+}
+
+#divLinks {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+select {
+    width: 92%;
+    height: 24px;
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: 90%;
+    margin-bottom: 10px;
+    height: 90px;
+    max-height: 200px;
+}
+
+label {
+    font-family: Arial, sans-serif;
+}
+
+input {
+    width: 90%;
+    margin-bottom: 0px;
+    height: 20px;
+}
+
+#chkEmailAssignee {
+    left: 10px;
+}
+
+#btnSubmit {
+    width: 100px !important;
+    margin-left: 10px;
+    height: 25px !important;
+}
+
+.divSection {
+    background-color: transparent;
+    padding-top: 0px;
+    padding-bottom: 1px;
+    margin-bottom: 10px;
+    border: 1px solid #666666;
+}
+
+.sectionHeader {
+    position: relative;
+    top: 8px;
+    color: #000000 !important;
+    font-size: 30px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.divHeader {
+    background-color: #666666;
+    color: #FFFFFF;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+#divBrowse .divBrowseItem {
+    color: #666666;
+    font-size: 30px;
+    font-family: Arial;
+    padding-top: 3px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    border-bottom: 1px solid #C5C5C5;
+}
+
+#divBrowse .divBrowseItem a {
+    color: #666666;
+    font-size: 30px;
+    font-family: Verdana;
+    text-decoration: none;
+}
+
+/*#divBrowse ul li span {
+    float: right; 
+    right: 10px; 
+    position: relative;
+}*/
+
+#liFirstItem {
+    color: #000000;
+    font-size: 30px;
+    font-family: Arial;
+    padding-bottom: 2px;
+    /*border-top: 1px solid #C5C5C5;*/
+}
+
+#liLastItem {
+    color: #000000;
+    font-size: 30px;
+    font-family: Arial;
+    padding-bottom: -5px !important;
+    border-bottom: 0px !important;
+}
