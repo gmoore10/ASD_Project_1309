@@ -1,8 +1,5 @@
-﻿var todo = {};
-
-
-var json = {
-    "To-Do 1": {
+﻿{ 
+    "todos": [ {
         "firstName": "Garrett",
         "lastName": "Moore",
         "toDoName": "Meet with Andy re: Data Project",
@@ -10,9 +7,9 @@ var json = {
         "assignedTo": "James Makowski",
         "priority": "27",
         "sendEmail": "Yes",
-        "content": "Talk to Andy about incorporating ethnicity information into data tracking projects.",
+        "content": "Talk to Andy about incorporating ethnicity information into data tracking projects."
     },
-    "To-Do 2": {
+    {
         "firstName": "Garrett",
         "lastName": "Moore",
         "toDoName": "Add Search Feature to Data Project",
@@ -20,9 +17,9 @@ var json = {
         "assignedTo": "Garrett Moore",
         "priority": "33",
         "sendEmail": "No",
-        "content": "Implement Search feature to find guest by first name, last name and email address.",
+        "content": "Implement Search feature to find guest by first name, last name and email address."
     },
-    "To-Do 3": {
+    {
         "firstName": "Garrett",
         "lastName": "Moore",
         "toDoName": "Finalize Budget",
@@ -30,9 +27,9 @@ var json = {
         "assignedTo": "James Makowski",
         "priority": "37",
         "sendEmail": "Yes",
-        "content": "Line-by-line review of annual budget. Submit to manager when complete",
+        "content": "Line-by-line review of annual budget. Submit to manager when complete"
     },
-    "To-Do 4": {
+    {
         "firstName": "Garrett",
         "lastName": "Moore",
         "toDoName": "Add Guest System to Tour Database",
@@ -40,9 +37,9 @@ var json = {
         "assignedTo": "Garrett Moore",
         "priority": "44",
         "sendEmail": "Yes",
-        "content": "Implement guest system for Tour Database.",
+        "content": "Implement guest system for Tour Database."
     },
-    "To-Do 5": {
+    {
         "firstName": "Garrett",
         "lastName": "Moore",
         "toDoName": "Discuss Bussing Staff Requirements",
@@ -50,9 +47,9 @@ var json = {
         "assignedTo": "Sarah Slegona",
         "priority": "18",
         "sendEmail": "Yes",
-        "content": "Discuss bussing quantity and drivers needed with Jim.",
+        "content": "Discuss bussing quantity and drivers needed with Jim."
     },
-    "To-Do 6": {
+    {
         "firstName": "Garrett",
         "lastName": "Moore",
         "toDoName": "Update Events Spreadsheet",
@@ -60,9 +57,9 @@ var json = {
         "assignedTo": "Sarah Slegona",
         "priority": "2",
         "sendEmail": "Yes",
-        "content": "Update spreadsheet with newly-generated events.",
+        "content": "Update spreadsheet with newly-generated events."
     },
-    "To-Do 7": {
+    {
         "firstName": "Garrett",
         "lastName": "Moore",
         "toDoName": "Contact Bussing Vendor for Event",
@@ -70,9 +67,9 @@ var json = {
         "assignedTo": "Sarah Slegona",
         "priority": "96",
         "sendEmail": "Yes",
-        "content": "Talk to Bussing Vendor to get invoice for previous event.",
+        "content": "Talk to Bussing Vendor to get invoice for previous event."
     },
-    "To-Do 8": {
+    {
         "firstName": "Garrett",
         "lastName": "Moore",
         "toDoName": "Contact Catering Vendor for Event",
@@ -80,9 +77,9 @@ var json = {
         "assignedTo": "Sarah Slegona",
         "priority": "96",
         "sendEmail": "Yes",
-        "content": "Get deposit invoice from catering company.",
+        "content": "Get deposit invoice from catering company."
     },
-    "To-Do 9": {
+    {
         "firstName": "Garrett",
         "lastName": "Moore",
         "toDoName": "Verify Radio Count from Vendor",
@@ -90,9 +87,9 @@ var json = {
         "assignedTo": "James Makowski",
         "priority": "88",
         "sendEmail": "Yes",
-        "content": "Verify 42 radios from Central Communcations.",
+        "content": "Verify 42 radios from Central Communcations."
     },
-    "To-Do 10": {
+    {
         "firstName": "Garrett",
         "lastName": "Moore",
         "toDoName": "Hold Lunch Meeting",
@@ -100,9 +97,9 @@ var json = {
         "assignedTo": "James Makowski",
         "priority": "99",
         "sendEmail": "Yes",
-        "content": "Hold Lunch Meeting with Security, IMT, Runners, I&D, etc.",
+        "content": "Hold Lunch Meeting with Security, IMT, Runners, I&D, etc."
     },
-    "To-Do 11": {
+    {
         "firstName": "Garrett",
         "lastName": "Moore",
         "toDoName": "Prepare Table Top Signage",
@@ -110,9 +107,9 @@ var json = {
         "assignedTo": "Sarah Slegona",
         "priority": "88",
         "sendEmail": "Yes",
-        "content": "Verify that all signs were returned and print/prepare new ones as needed.",
+        "content": "Verify that all signs were returned and print/prepare new ones as needed."
     },
-    "To-Do 12": {
+    {
         "firstName": "Garrett",
         "lastName": "Moore",
         "toDoName": "Prepare Paint Stick Signage",
@@ -120,9 +117,9 @@ var json = {
         "assignedTo": "Sarah Slegona",
         "priority": "88",
         "sendEmail": "Yes",
-        "content": "Verify all signs were returned and print/prepare new ones as needed.",
+        "content": "Verify all signs were returned and print/prepare new ones as needed."
     },
-    "To-Do 13": {
+    {
         "firstName": "Garrett",
         "lastName": "Moore",
         "toDoName": "Make Office Depot Trip",
@@ -130,9 +127,9 @@ var json = {
         "assignedTo": "Sarah Slegona",
         "priority": "41",
         "sendEmail": "Yes",
-        "content": "Buy: Lamination Sheets, Plastic Drawers, File Folders, Ink, and post-its.",
+        "content": "Buy: Lamination Sheets, Plastic Drawers, File Folders, Ink, and post-its."
     },
-    "To-Do 14": {
+    {
         "firstName": "Garrett",
         "lastName": "Moore",
         "toDoName": "Order Food from Crisper's",
@@ -140,9 +137,9 @@ var json = {
         "assignedTo": "Sarah Slegona",
         "priority": "57",
         "sendEmail": "Yes",
-        "content": "7 Sandwich platters minimu, assorted varieties. Make sure one is vegetarian.",
+        "content": "7 Sandwich platters minimu, assorted varieties. Make sure one is vegetarian."
     },
-    "To-Do 15": {
+    {
         "firstName": "Garrett",
         "lastName": "Moore",
         "toDoName": "Call Students to Schedule Work",
@@ -150,9 +147,9 @@ var json = {
         "assignedTo": "James Makowski",
         "priority": "91",
         "sendEmail": "Yes",
-        "content": "43 Students required to work the event.",
+        "content": "43 Students required to work the event."
     },
-    "To-Do 16": {
+    {
         "firstName": "Garrett",
         "lastName": "Moore",
         "toDoName": "Prepare Student Emails",
@@ -160,9 +157,9 @@ var json = {
         "assignedTo": "Sarah Slegona",
         "priority": "81",
         "sendEmail": "Yes",
-        "content": "Prepare student work emails and setup/strike emails.",
+        "content": "Prepare student work emails and setup/strike emails."
     },
-    "To-Do 17": {
+    {
         "firstName": "Garrett",
         "lastName": "Moore",
         "toDoName": "Send Student Emails",
@@ -170,9 +167,9 @@ var json = {
         "assignedTo": "Sarah Slegona",
         "priority": "81",
         "sendEmail": "Yes",
-        "content": "Send emails at 7PM on Friday.",
+        "content": "Send emails at 7PM on Friday."
     },
-    "To-Do 18": {
+    {
         "firstName": "Garrett",
         "lastName": "Moore",
         "toDoName": "Email Executive Committee",
@@ -180,9 +177,9 @@ var json = {
         "assignedTo": "James Makowski",
         "priority": "94",
         "sendEmail": "Yes",
-        "content": "Email weather and numbers to Executive Committee.",
+        "content": "Email weather and numbers to Executive Committee."
     },
-    "To-Do 19": {
+    {
         "firstName": "Garrett",
         "lastName": "Moore",
         "toDoName": "Deliver Rain Ponchos",
@@ -190,9 +187,9 @@ var json = {
         "assignedTo": "Sarah Slegona",
         "priority": "2",
         "sendEmail": "Yes",
-        "content": "Drop 11 Bins of Rain Ponchos.",
+        "content": "Drop 11 Bins of Rain Ponchos."
     },
-    "To-Do 20": {
+    {
         "firstName": "Garrett",
         "lastName": "Moore",
         "toDoName": "Print Master/Bussing/Orientation Schedules",
@@ -200,6 +197,7 @@ var json = {
         "assignedTo": "Sarah Slegona",
         "priority": "75",
         "sendEmail": "Yes",
-        "content": "Make 5 copies of all schedules. Reserve one copy for Sarah Slegona.",
+        "content": "Make 5 copies of all schedules. Reserve one copy for Sarah Slegona."
     }
+]
 }
