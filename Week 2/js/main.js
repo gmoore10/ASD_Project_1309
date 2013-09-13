@@ -238,6 +238,7 @@ $('#addItem').on('pagehide', function (event, ui) {
     if (ui.nextPage[0].id === "home" || ui.nextPage[0].id === "items" || ui.nextPage[0].id === "members" || ui.nextPage[0].id === "settings") {
         var myForm = $('#addToDoForm');
         myForm[0].reset();
+        $("#key").val("");
     }
 });
 
