@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="Our very first HTML5 document. How exciting!" />
+        <meta name="keywords" content="html5, mobile development, Full Sail University" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="user-scalable=no, width=device-width" />
+        <link href="css/style.css" rel="stylesheet" />
+        <title>Assignable To-Do List - Add</title>
+    </head>
+    <body>
+        <h1>Assignable To-Do List</h1>
+
+        <ul id="errorList"></ul>
+
+        <div id="divLinks">
+            <a href="#" id="linkClearData">Clear Stored Data</a>
+            <a href="#" id="linkDisplayData">Display Data</a>
+            <a href="additem.html" id="linkAddNew" style="display: none;">Add New To-Do</a>
+        </div>
+        <form action="#" method="post" id="toDoForm">
+            <div id="divYourName" class="divSection">
+                <div id="divYourNameHeader" class="divHeader">Your Name</div>
+                <ul>
+                    <li>
+                        <label for="firstname">First Name </label><br />
+                        <input type="text" id="firstname" />
+                    </li>
+                    <li>
+                        <label for="lastname">Last Name </label><br />
+                        <input type="text" id="lastname" />
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <div id="div1" class="divSection">
+                <div id="div2" class="divHeader">To-Do Content</div>
+                <ul>
+                    <li>
+                        <label for="toDoName">To-Do Name </label><br />
+                        <input type="text" id="toDoName" />
+                    </li>
+                    <li>
+                        <label for="dtDue">Due Date</label><br />
+                        <input type="date" id="dtDue" />
+                    </li>
+                    <li id="select">
+                        <label for="assignedto">Assigned To: </label><br />
+                    </li>
+                    <li>
+                        <label for="rngPriority">Priority</label><br />
+                        <input type="range" id="rngPriority" />
+                    </li>
+                    <li>
+                        <label for="txtContent">Content</label><br /><textarea id="txtContent"></textarea>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="chkEmailAssignee" value="Yes" />
+                        <label for="chkEmailAssignee">Send Email to Task Receiver?</label>
+                    </li>
+                    <li>
+                        <input type="hidden" value="external" />
+                    </li>
+                </ul>
+                <input type="button" id="btnSubmit" value="Save To-Do" />
+            </div>
+        </form>
+        <script src="js/json.js" type="text/javascript"></script>
+        <script src="js/main.js" type="text/javascript"></script>
+    </body>
+</html>
