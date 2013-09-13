@@ -233,10 +233,12 @@ $('#addItem').on('pageinit', function () {
 });
 
 $('#addItem').on('pagehide', function (event, ui) {
-    alert("Prev Page" + ui);
-    console.log(ui);
-    var myForm = $('#addToDoForm');
-    myForm[0].reset();
+    //alert("Prev Page" + ui.nextPage[0].id);
+    //console.log(ui.nextPage[0].id);
+    if (ui.nextPage[0].id === "home" || ui.nextPage[0].id === "items" || ui.nextPage[0].id === "members" || ui.nextPage[0].id === "settings") {
+        var myForm = $('#addToDoForm');
+        myForm[0].reset();
+    }
 });
 
 $('#settings').on('pageinit', function () {
