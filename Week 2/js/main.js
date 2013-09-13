@@ -232,7 +232,9 @@ $('#addItem').on('pageinit', function () {
     toDoLibrary.pageInits.addItemInit();
 });
 
-$('#addItem').on('pagehide', function () {
+$('#addItem').on('pagehide', function (event, ui) {
+    alert("Prev Page" + ui);
+    console.log(ui);
     var myForm = $('#addToDoForm');
     myForm[0].reset();
 });
