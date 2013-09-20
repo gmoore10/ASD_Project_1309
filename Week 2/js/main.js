@@ -8,7 +8,7 @@ var toDoLibrary = {
             //Load XML data for Drop Down List in form.
             var toDoAssignees = $.ajax({
                 type: "GET",
-                url: "js/teamMembers.xml",
+                url: "teamMembers.xml",
                 dataType: "xml",
                 success: function (data, status) {
                     $(data).find('teamMember').each(function () {
@@ -59,7 +59,7 @@ var toDoLibrary = {
 
             var toDoTeamMembers = $.ajax({
                 type: "GET",
-                url: "js/teamMembers.xml",
+                url: "teamMembers.xml",
                 dataType: "xml",
                 success: function (data, status) {
                     $(data).find('teamMember').each(function () {
