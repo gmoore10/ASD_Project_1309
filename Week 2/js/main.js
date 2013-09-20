@@ -160,7 +160,22 @@ var toDoLibrary = {
         },
         autoPopulateData: function () {
             //Populate to-do records from JSON file it localStorage is empty.
-            var divItems = $("div#items div[data-role='content'] ul");
+            //var divItems = $("div#items div[data-role='content'] ul");
+            
+            $.couch.db("asd_teamtodolist").view("teamtodolist/todos", {
+                success: function(data) {
+                    var divItems = $("div#items div[data-role='content'] ul");
+                  $.each(data.rows, function(index, todos){
+
+                    divItems.append('<li>' +
+                        '<a href="edit.html?todo=' + todos.key + '" data-key="' + todos.id + '">' + todos.value.toDoName +
+                        '<br />Due: ' + todos.value.dtDue + '</a>' +
+                        '</li>');
+                });
+                divItems.listview('refresh');
+                  }
+            });
+            /*
             var todoItems = $.ajax({
                 type: "GET",
                 url: "js/json.js",
@@ -180,6 +195,7 @@ var toDoLibrary = {
                     divItems.listview('refresh');
                 }
             });
+            */
             //for (var n in json) {
             //    var id = Math.floor(Math.random() * 100000001);
             //    localStorage.setItem(id, JSON.stringify(json[n]));
