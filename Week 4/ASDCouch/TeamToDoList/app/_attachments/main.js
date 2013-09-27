@@ -201,11 +201,24 @@ var toDoLibrary = {
                 toDoLibrary.operations.autoPopulateData();
             }
         },
-        deleteToDo: function (key) {
-            var confirmPopup = confirm("Are you sure you want to delete this to-do?");
+        deleteToDo: function (id, rev) {
+                var todoData = {
+				_id: id,
+				_rev: rev
+			};
+			var confirmPopup = confirm("Are you sure you want to delete this to-do?");
             if (confirmPopup) {
-                localStorage.removeItem(key);
-                window.location.reload();
+                console.log(todoData);
+				$.couch.db("asd_teamtodolist").removeDoc(todoData, {
+					success: function (data) {
+						console.log(data);
+						alert("To-Do Deleted");
+					},
+					error: function (status) {
+						console.log(status)
+					}
+				});
+				$.mobile.changePage("index.html");
             } else {
                 alert("No changes were made");
             }
@@ -245,7 +258,9 @@ $(document).on("pageinit", "#todoItem", function () {
                     "id": todoItem.id,
                     "rev": todoItem.rev,
                 };
-                $("#deleteToDo").attr("href", "delete.html?todo=" + keyInfo)
+                $("#deleteToDoLink").on("click", function() {
+					toDoLibrary.operations.deleteToDo(todoInfo.id, todoInfo.value.rev);
+				});
                 $("#editToDoLink").attr("href", "edit.html?todo=" + keyInfo)
                 var todoLI = $("<li></li>");
                 var todoDisplayInfo = $(
