@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>View To-Do</title>
+    </head>
+    <body>
+        <div data-role="page" id="editTodo" data-theme="a">
+            <div data-role="header" data-position="fixed">
+                <img border="0" src="Logo.png" alt="" class="logo"/>
+                <h1>Add To-Do</h1>
+            </div>
+            
+            <div data-role="content">
+                <form action="" method="post" id="editToDoForm">
+                    * Required
+                    <div data-role="fieldcontain">
+                        <label for="id">ID</label>
+                        <input type="text" name="id" id="id" placeholder="ID" class="required" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="rev">REV</label>
+                        <input type="text" name="rev" id="rev" placeholder="REV" class="required" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="txtFirstName">First Name*</label>
+                        <input type="text" name="txtFirstName" id="txtFirstName" placeholder="Your First Name" class="required" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="txtLastName">Last Name*</label>
+                        <input type="text" name="txtLastName" id="txtLastName" placeholder="Your Last Name" class="required" />
+                    </div>
+
+                    <div data-role="fieldcontain">
+                        <label for="txtToDoName">To-Do Name*</label>
+                        <input type="text" name="txtToDoName" id="txtToDoName" placeholder="Compile Excel List of Names" class="required" />
+                    </div>
+
+                    <div data-role="fieldcontain">
+                        <label for="ddlAssignedTo">Assigned To*</label>
+                        <select name="ddlAssignedTo" id="ddlAssignedTo" data-native-menu="false" class="required">
+                            <option value="" data-placeholder="true">Select...</option>
+                            <option value="James Makowski">James Makowski</option>
+                            <option value="Andrew Mund">Andrew Mund</option>
+                            <option value="Garrett Moore">Garrett Moore</option>
+                            <option value="Sarah Slegona">Sarah Slegona</option>
+                            <option value="Josh Huffine">Josh Huffine</option>
+                        </select>
+                    </div>
+
+                    <div data-role="fieldcontain">
+                        <label for="txtDueDate">Due Date</label>
+                        <input type="text" name="txtDueDate" id="txtDueDate" placeholder="MM/DD/YYYY" value="5/23/2013" class="required date" />
+                    </div>
+
+                    <div data-role="fieldcontain">
+                        <label for="rngPriority">Priority</label>
+                        <input type="range" name="rngPriority" id="rngPriority" value="1" min="1" max="100" />
+                    </div>
+
+                    <div data-role="fieldcontain">
+                        <label for="txtContent">Content/Notes</label>
+                        <textarea name="txtContent" id="txtContent" placeholder="Description of To-Do"></textarea>
+                    </div>
+
+                    <div data-role="fieldcontain">
+                        <label for="sldEmailTaskReceiver">Email Task Receiver?</label>
+                        <br />
+                        <select data-role="slider" name="sldEmailTaskReceiver" id="sldEmailTaskReceiver">
+                            <option value="No">No</option>
+                            <option value="Yes" selected>Yes</option>
+                        </select>
+                    </div>
+                    <div data-role="fieldcontain">
+                        <input type="hidden" id="key" />
+                        <input type="submit" value="Edit To-Do" data-theme="b" />
+                    </div>
+                </form>
+            </div>
+
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-icon="home">Home</a></li>
+                        <li><a href="#items" data-icon="star">To-Do's</a></li>
+                        <li><a href="#members" data-icon="add">Members</a></li>
+                        <li><a href="#settings" data-icon="info">Settings</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

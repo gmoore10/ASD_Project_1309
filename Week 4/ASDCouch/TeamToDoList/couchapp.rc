@@ -1,0 +1,10 @@
+{
+  "env": {
+    "local": {
+      "db": "http://127.0.0.1:5984/asd_teamtodolist"
+    },
+    "cloudant": {
+      "db": "https://hentemanderepseesterdntr:Hrk7tjeJ8jMDJEXCmiGg0HBK@gmoore10.cloudant.com/asd_teamtodolist"
+    }
+  }
+}
