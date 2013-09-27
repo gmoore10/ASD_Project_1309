@@ -93,7 +93,7 @@ var toDoLibrary = {
 		editItemInit: function () {
             var toDoAssigneeList = {};
 
-            $("#ddlAssignedTo").selectmenu('refresh');
+            $("#editToDoForm #ddlAssignedTo").selectmenu('refresh');
 
             var myForm = $('#editToDoForm');
             myForm.validate({
@@ -102,9 +102,11 @@ var toDoLibrary = {
                 submitHandler: function () {
                     var data = myForm.serializeArray();
                     var key = $("#key").val();
-                    toDoLibrary.operations.storeData(data, key);
+                    toDoLibrary.operations.editToDo(data, key);
                 }
             });
+			
+			
         },
         settingsInit: function () {
             $(".clearLocal").on("click", function (event) {
@@ -124,10 +126,11 @@ var toDoLibrary = {
 				lastName: $("#editToDoForm #txtLastName").val(),
 				toDoName: $("#editToDoForm #txtToDoName").val(),
 				dtDue: $("#editToDoForm #txtDueDate").val(),
-				assinedTo: $("#editToDoForm #ddlAssignedTo").val(),
+				assignedTo: $("#editToDoForm #ddlAssignedTo").val(),
 				priority: $("#editToDoForm #rngPriority").val(),
 				emailTaskReceiver: $("#editToDoForm #sldEmailTaskReceiver").val(),
 				content: $("#editToDoForm #txtContent").val(),
+				type: "todo"
 			};
 			console.log(todoData);
 			$.couch.db("asd_teamtodolist").saveDoc(todoData, {
@@ -157,7 +160,7 @@ var toDoLibrary = {
 				lastName: $("#addToDoForm #txtLastName").val(),
 				toDoName: $("#addToDoForm #txtToDoName").val(),
 				dtDue: $("#addToDoForm #txtDueDate").val(),
-				assinedTo: $("#addToDoForm #ddlAssignedTo").val(),
+				assignedTo: $("#addToDoForm #ddlAssignedTo").val(),
 				priority: $("#addToDoForm #rngPriority").val(),
 				emailTaskReceiver: $("#addToDoForm #sldEmailTaskReceiver").val(),
 				content: $("#addToDoForm #txtContent").val(),
@@ -288,7 +291,7 @@ $(document).on("pageinit", "#editToDo", function () {
                 };
 				
 				$("#editToDoForm #id").val(todoInfo.id);
-				$("#editToDoForm #rev").val(todoInfo.rev);
+				$("#editToDoForm #rev").val(todoInfo.value.rev);
 				$("#editToDoForm #txtFirstName").val(todoInfo.value.firstName);
 				$("#editToDoForm #txtLastName").val(todoInfo.value.lastName);
 				$("#editToDoForm #txtToDoName").val(todoInfo.value.toDoName);
@@ -298,6 +301,8 @@ $(document).on("pageinit", "#editToDo", function () {
 				$("#editToDoForm #sldEmailTaskReceiver").val(todoInfo.value.emailTaskReceiver);
 				$("#editToDoForm #txtContent").val(todoInfo.value.content);
             });
+			$("#editToDoForm #ddlAssignedTo").selectmenu('refresh');
+			$("#editToDoForm #sldEmailTaskReceiver").slider('refresh');
         }
 	});
 

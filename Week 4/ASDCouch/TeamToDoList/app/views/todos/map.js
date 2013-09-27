@@ -1,6 +1,7 @@
 function (doc) {
 	if(doc.type === "todo") {
 		emit(doc._id, {
+			"rev": doc._rev,
 			"toDoName": doc.toDoName,
 			"dtDue": doc.dtDue,
 			"firstName": doc.firstName,
